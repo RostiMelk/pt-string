@@ -83,34 +83,32 @@ import { HighlightIcon } from '@sanity/icons';
 const HighlightDecorator = (props) => <span style={{ backgroundColor: '#ff0', color: '#000' }}>{props.children}</span>;
 
 export default defineType({
-	name: 'myType',
-	type: 'document',
-	fields: [
-		{
-			name: 'myField',
-			type: 'pt-string',
-			title: 'My Field',
-			options: {
-				decorators: [
-					{ title: 'Strong', value: 'strong' },
-					{ title: 'Emphasis', value: 'em' },
-					{ title: 'Code', value: 'code' },
-					{ title: 'Underline', value: 'underline' },
-					{ title: 'Strike', value: 'strike-through' },
-					// Custom highlight decorator
-					{
-						title: 'Highlight',
-						value: 'highlight',
-						icon: HighlightIcon,
-						component: HighlightDecorator,
-					},
-				],
-			},
-		},
-	],
+  name: 'myType',
+  type: 'document',
+  fields: [
+    {
+      name: 'myField',
+      type: 'pt-string',
+      title: 'My Field',
+      options: {
+        decorators: [
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+          { title: 'Code', value: 'code' },
+          { title: 'Underline', value: 'underline' },
+          { title: 'Strike', value: 'strike-through' },
+          // Custom highlight decorator
+          {
+            title: 'Highlight',
+            value: 'highlight',
+            icon: HighlightIcon,
+            component: HighlightDecorator,
+          },
+        ],
+      },
+    },
+  ],
 });
-
-
 ```
 
 ## License
