@@ -80,9 +80,7 @@ Add your own custom decorators:
 import { defineType } from 'sanity';
 import { HighlightIcon } from '@sanity/icons';
 
-const HighlightDecorator = (props) => (
-  <span style={{ backgroundColor: '#ff0', color: '#000' }}>{props.children}</span>
-);
+const HighlightDecorator = (props) => <span style={{ backgroundColor: '#ff0', color: '#000' }}>{props.children}</span>;
 
 export default defineType({
 	name: 'myType',
@@ -94,14 +92,14 @@ export default defineType({
 			title: 'My Field',
 			options: {
 				decorators: [
-          { title: 'Strong', value: 'strong' },
+					{ title: 'Strong', value: 'strong' },
 					{ title: 'Emphasis', value: 'em' },
 					{ title: 'Code', value: 'code' },
 					{ title: 'Underline', value: 'underline' },
 					{ title: 'Strike', value: 'strike-through' },
-          // Custom highlight decorator
-          {
-            title: 'Highlight',
+					// Custom highlight decorator
+					{
+						title: 'Highlight',
 						value: 'highlight',
 						icon: HighlightIcon,
 						component: HighlightDecorator,
@@ -111,6 +109,7 @@ export default defineType({
 		},
 	],
 });
+
 
 ```
 
