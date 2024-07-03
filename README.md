@@ -1,5 +1,10 @@
 # pt-string
 
+A single line portable text input.
+
+![Screenshot](./assets/screenshot-dark.png#gh-dark-mode-only)
+![Screenshot](./assets/screenshot-light.png#gh-light-mode-only)
+
 > This is a **Sanity Studio v3** plugin.
 
 ## Installation
