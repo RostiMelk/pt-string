@@ -12,7 +12,8 @@
   },
   "keywords": [
     "sanity",
-    "sanity-plugin"
+    "sanity-plugin",
+    "portable-text"
   ],
   "license": "MIT",
   "author": "Rostislav Melkumyan <rosti@sanity.io>",
