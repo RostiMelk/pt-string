@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-pt-string",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Single line portable text",
   "keywords": [
     "sanity",
@@ -40,7 +40,7 @@
     "@sanity/icons": "^3.2.0",
     "@sanity/incompatible-plugin": "^1.0.4",
     "@sanity/types": "^3.49.0",
-    "@sanity/ui": "^2.5.0"
+    "@sanity/ui": "^2"
   },
   "devDependencies": {
     "@sanity/pkg-utils": "^6.10.0",
@@ -64,7 +64,9 @@
   },
   "peerDependencies": {
     "react": "^18",
-    "sanity": "^3"
+    "sanity": "^3",
+    "styled-components": "^6",
+    "@sanity/ui": "^2"
   },
   "engines": {
     "node": ">=18"

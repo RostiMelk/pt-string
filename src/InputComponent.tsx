@@ -32,7 +32,7 @@ const EMPTY_ARRAY: [] = []
 const InputWrapper = styled(Card)`
   position: relative;
   overflow: hidden;
-  font-size: 0.9375rem;
+  font-size: ${(props) => `${props.theme.sanity.fonts.text.sizes[2].fontSize}px`};
   cursor: text;
 
   &:focus-within {
