@@ -1,7 +1,15 @@
 {
   "name": "sanity-plugin-pt-string",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Single line portable text",
+  "homepage": "https://github.com/rostimelk/pt-string#readme",
+  "bugs": {
+    "url": "https://github.com/rostimelk/pt-string/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rostimelk/pt-string.git"
+  },
   "keywords": [
     "sanity",
     "sanity-plugin"
