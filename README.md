@@ -45,6 +45,29 @@ export default defineType({
 })
 ```
 
+## Preview
+
+Add a preview config your schema type: `schemaTypes/schema.ts`:
+
+```ts
+import {defineType, defineField} from 'sanity'
+import {ptStringPreview} from 'sanity-plugin-pt-string'
+
+export default defineType({
+  name: 'myType',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'myField',
+      type: 'pt-string',
+      title: 'My Field',
+      preview: ptStringPreview,
+    }),
+  ],
+  preview: ptStringPreview('myField'),
+})
+```
+
 ## Options
 
 Customize decorators by passing an object with the following properties:
