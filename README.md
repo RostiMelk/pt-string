@@ -45,7 +45,7 @@ export default defineType({
 })
 ```
 
-## Preview
+### Preview
 
 Add a preview config your schema type: `schemaTypes/schema.ts`:
 
@@ -68,7 +68,7 @@ export default defineType({
 })
 ```
 
-## Options
+### Options
 
 Customize decorators by passing an object with the following properties:
 
@@ -133,6 +133,14 @@ export default defineType({
   ],
 });
 ```
+
+## Migrations
+
+See the migration script inside ./migrations/transformStringToPortableText.js of this Repo.
+
+Follow the instructions inside the script and set the \_type and field name you wish to target.
+
+Please take a backup first!
 
 ## License
 
