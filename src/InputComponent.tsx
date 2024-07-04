@@ -9,7 +9,7 @@ import {
 } from '@portabletext/editor'
 import {htmlToBlocks, randomKey} from '@sanity/block-tools'
 import {Box, Card, Flex, ThemeProvider, useToast} from '@sanity/ui'
-import {useCallback, useRef, useState, type ReactNode} from 'react'
+import {useCallback, useState, type ReactNode} from 'react'
 import {
   ArrayDefinition,
   BlockDefinition,
@@ -32,7 +32,7 @@ const EMPTY_ARRAY: [] = []
 const InputWrapper = styled(Card)`
   position: relative;
   overflow: hidden;
-  font-size: ${(props) => `${props.theme.sanity.fonts.text.sizes[2].fontSize}px`};
+  font-size: 0.9375rem;
   cursor: text;
 
   &:focus-within {
