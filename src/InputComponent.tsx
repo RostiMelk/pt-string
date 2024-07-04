@@ -12,8 +12,10 @@ import {Box, Card, Flex, ThemeProvider, useToast} from '@sanity/ui'
 import {useCallback, useRef, useState, type ReactNode} from 'react'
 import {
   ArrayDefinition,
+  BlockDefinition,
   ChangeIndicator,
   PortableTextChild,
+  TypedObject,
   type PortableTextBlock,
   type PortableTextInputProps,
   type PortableTextSpan,
@@ -56,15 +58,14 @@ const Placeholder = styled(Card)`
 
 const optionizedSchemaType = (schemaType: ArrayDefinition, options?: PtStringOptions) => {
   const newSchemaType = {...schemaType}
+
   if (options?.decorators) {
-    newSchemaType.of[0].marks.decorators = options.decorators
+    const block = newSchemaType.of[0] as BlockDefinition
+    if (!block.marks) block.marks = {}
+    block.marks.decorators = options.decorators
   }
   return newSchemaType
 }
-
-// const renderDecorator: RenderDecoratorFunction = (props) => {
-//   return (decoratorMap.get(props.value) ?? ((props) => props.children))(props)
-// }
 
 export function InputComponent({
   elementProps,
@@ -74,12 +75,10 @@ export function InputComponent({
   changed,
   schemaType,
   onChange,
-  onEditorChange,
 }: PortableTextInputProps & {schemaType: {options?: PtStringOptions}}): ReactNode {
   const toast = useToast()
   const [isOffline, setIsOffline] = useState(false)
   const [hasFocusWithin, setHasFocusWithin] = useState(false)
-  const editorRef = useRef<PortableTextEditor | null>(null)
 
   const schema = optionizedSchemaType(ptStringType, schemaType.options)
 
@@ -144,7 +143,7 @@ export function InputComponent({
     }
 
     return {
-      insert: mergeToSingleBlock(blocks),
+      insert: mergeToSingleBlock(blocks) as unknown as TypedObject[],
       path,
     }
   }, [])
@@ -164,6 +163,7 @@ export function InputComponent({
           break
         case 'focus':
           setHasFocusWithin(true)
+          elementProps.onFocus(change.event)
           break
         case 'blur':
           setHasFocusWithin(false)
@@ -184,12 +184,8 @@ export function InputComponent({
           break
         default:
       }
-
-      if (editorRef.current && onEditorChange) {
-        onEditorChange(change, editorRef.current)
-      }
     },
-    [onEditorChange, onChange, elementProps.onBlur, editorRef],
+    [onChange, toast, elementProps],
   )
 
   const renderPlaceholder: RenderPlaceholderFunction = useCallback(() => {
@@ -221,11 +217,10 @@ export function InputComponent({
         >
           <InputWrapper
             shadow={1}
-            paddingY={schema?.of[0].marks?.decorators?.length ? 1 : 2}
+            paddingY={(schema?.of[0] as BlockDefinition)?.marks?.decorators?.length ? 1 : 2}
             paddingRight={1}
             paddingLeft={3}
             radius={2}
-            onClick={() => editorRef.current && PortableTextEditor.focus(editorRef.current)}
           >
             <Flex gap={1} align="center">
               <Box flex={1} overflow={'auto'} height="fill">

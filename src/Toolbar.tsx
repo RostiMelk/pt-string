@@ -1,10 +1,11 @@
+import {useId, useMemo} from 'react'
 import {
   EditorSelection,
   PortableTextEditor,
   usePortableTextEditor,
   usePortableTextEditorSelection,
 } from '@portabletext/editor'
-import {BlockDecoratorDefinition} from '@sanity/types'
+import type {BlockDecoratorDefinition} from 'sanity'
 import {
   Button,
   Text,
@@ -25,7 +26,6 @@ import {
   BoldIcon,
   EllipsisVerticalIcon as MenuIcon,
 } from '@sanity/icons'
-import {useId, useMemo} from 'react'
 
 const iconMap: Record<string, IconComponent> = {
   strong: BoldIcon,

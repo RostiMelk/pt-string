@@ -35,7 +35,7 @@
     "watch": "pkg-utils watch --strict"
   },
   "dependencies": {
-    "@portabletext/editor": "^1.0.7",
+    "@portabletext/editor": "^1.0.8",
     "@sanity/block-tools": "^3.48.1",
     "@sanity/icons": "^3.2.0",
     "@sanity/incompatible-plugin": "^1.0.4",
@@ -68,5 +68,11 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "sanityPlugin": {
+    "verifyPackage": {
+      "eslintImports": false,
+      "dependencies": false
+    }
   }
 }
