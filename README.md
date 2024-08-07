@@ -1,5 +1,7 @@
 # pt-string
 
+![NPM Version](https://img.shields.io/npm/v/sanity-plugin-pt-string)
+
 A single line portable text input.
 
 ![Screenshot](./assets/screenshot-dark.png#gh-dark-mode-only)
