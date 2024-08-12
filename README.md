@@ -136,6 +136,34 @@ export default defineType({
 });
 ```
 
+## Usage
+
+The data is output as a Portable Text block. You can use the `PortableText` component from `@portabletext/react` to render it in React:
+
+```tsx
+import {PortableText} from '@portabletext/react'
+
+const PortableTextParagraph = (props) => {
+  return <PortableText value={props.value} />
+}
+```
+
+If you want to customize the rendering of the blocks, you can pass a `components` prop to the `PortableText` component. Following is an example of how to render your content within a `h2` tag:
+
+```tsx
+import {PortableText} from '@portabletext/react'
+
+const components = {
+  block: {
+    normal: ({ children }) => <h2>{children}</h2>
+  }
+}
+
+const PortableTextHeading = (props) => {
+  return <PortableText value={props.value} components={components} />
+}
+```
+
 ## Migrations
 
 See the migration script inside ./migrations/transformStringToPortableText.js of this Repo.
