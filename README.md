@@ -1,6 +1,6 @@
 # pt-string
 
-![NPM Version](https://img.shields.io/npm/v/sanity-plugin-pt-string)
+[![NPM Version](https://img.shields.io/npm/v/sanity-plugin-pt-string)](https://www.npmjs.com/package/sanity-plugin-pt-string)
 
 A single line portable text input.
 
